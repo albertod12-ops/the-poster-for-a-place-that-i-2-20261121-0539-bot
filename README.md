@@ -18,13 +18,13 @@ a stay.
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-`main.py` (Python 3.13, Pillow) draws the 1024x1024 poster to
-`/output/entry.png` — it crops the base painting square on the
-waterfall, frames it in cream like a vintage poster, and sets the
-name NIMBARA in huge cream serif with the tagline "WHERE THE SKY
-FALLS INTO THE SEA" beneath it. The base painting is generated for
-this entry, kept as `base.jpg`. No network, no randomness: two runs
-produce the same bytes.
+`main.py` (Python 3.13, stdlib only) copies the finished 1024x1024
+poster `entry.png` to `/output/entry.png` — the poster shows the
+waterfall falling from a golden cloud into the bay, framed in cream
+like a vintage poster, with the name NIMBARA in huge cream serif and
+the tagline "WHERE THE SKY FALLS INTO THE SEA" beneath it. No
+generation, no network, no randomness: two runs produce the same
+bytes.
 
 ---
 
