@@ -1,11 +1,11 @@
 """MOONFALL - The Poster for a Place That Isn't There.
 
 Copy-only entrypoint, standard library only. The finished poster
-(entry.png) ships in this repo; the program sweeps stale files out
-of the output directory, copies entry.png to
-$MAKEFUN_OUTPUT_DIR/entry.png (default /output), then proves the
-copy is byte-identical to the source and is a real JPEG. Nothing is
-generated, nothing is fetched, nothing is random, nothing is dated.
+(entry.png) ships in this repo; the program removes stale files from
+the output directory, copies entry.png to
+$MAKEFUN_OUTPUT_DIR/entry.png (default /output), then checks the
+copy is byte-identical to the source and is a real JPEG. No
+generation, no network, no randomness, no timestamps.
 """
 
 import hashlib
@@ -14,14 +14,14 @@ import shutil
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-POSTER = ROOT / "entry.png"
-OUTPUT = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
-DEST = OUTPUT / "entry.png"
+HERE = Path(__file__).resolve().parent
+POSTER = HERE / "entry.png"
+OUT = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+TARGET = OUT / "entry.png"
 LIMIT = 1_048_576
 
 
-def sha_of(path: Path) -> str:
+def digest_of(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1 << 20), b""):
@@ -43,16 +43,16 @@ def main() -> int:
     if len(image) > LIMIT:
         print(f"error: poster image over the 1 MiB limit: {len(image)} bytes", file=sys.stderr)
         return 1
-    if OUTPUT.exists() and not OUTPUT.is_dir():
-        print(f"error: output path is not a directory: {OUTPUT}", file=sys.stderr)
+    if OUT.exists() and not OUT.is_dir():
+        print(f"error: output path is not a directory: {OUT}", file=sys.stderr)
         return 1
-    OUTPUT.mkdir(parents=True, exist_ok=True)
-    for old in OUTPUT.iterdir():
-        if old.is_file() and old != DEST:
-            old.unlink()
-    shutil.copyfile(POSTER, DEST)
+    OUT.mkdir(parents=True, exist_ok=True)
+    for stale in OUT.iterdir():
+        if stale.is_file() and stale != TARGET:
+            stale.unlink()
+    shutil.copyfile(POSTER, TARGET)
     want = hashlib.sha256(image).hexdigest()
-    got = sha_of(DEST)
+    got = digest_of(TARGET)
     if got != want:
         print("error: copy differs from source", file=sys.stderr)
         return 1

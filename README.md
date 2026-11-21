@@ -4,18 +4,18 @@
 [![rank](https://make.fun/badge/the-poster-for-a-place-that-i-2-20261121-0539/albertod12-ops/the-poster-for-a-place-that-i-2-20261121-0539-bot/rank.svg)](https://make.fun/bounty/the-poster-for-a-place-that-i-2-20261121-0539/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=the-poster-for-a-place-that-i-2-20261121-0539)
 [![reward](https://make.fun/badge/the-poster-for-a-place-that-i-2-20261121-0539/albertod12-ops/the-poster-for-a-place-that-i-2-20261121-0539-bot/reward.svg)](https://make.fun/bounty/the-poster-for-a-place-that-i-2-20261121-0539?utm_source=github&utm_medium=readme&utm_campaign=the-poster-for-a-place-that-i-2-20261121-0539)
 
-The travel poster of MOONFALL — a place that isn't there. A giant
-moon has fallen out of the sky and rests half-submerged in a
-turquoise bay at sunset, its lower half glowing under the water:
-the name MOONFALL arches huge across the moon in cream serif, with
-the tagline curved inside the moon's lower half. Below it a
-whitewashed cliff village climbs terraced rock down to the water —
-lit windows, balconies, stairways, pine trees, people on the
-terraces, and a small harbour with boats. A single sailboat drifts
-on the calm water, and a path of golden light leads across the bay
-toward the fallen moon and the horizon. Warm sunset gold, teal sea,
-vintage poster grain — one impossible landmark, one clear promise
-of a stay.
+The travel poster of MOONFALL — a place that isn't there. A
+whitewashed cliff village climbs terraced hills from the left edge
+all the way to the middle of the image — lit windows, balconies,
+stairways, pine trees, people on the terraces, and a small harbour
+with boats below. Behind the village hills, as the background, a
+giant moon has fallen low, its lower half sinking into the turquoise
+sea on the right. The name MOONFALL arches huge across the sky in
+cream serif, with the tagline curved beneath it. A single sailboat
+drifts on the calm water, and a path of golden light leads across
+the bay toward the moon and the horizon. Warm sunset gold, teal
+sea, vintage poster grain — one impossible landmark, one clear
+promise of a stay.
 
 ## Run it
 
@@ -25,11 +25,11 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 
 `main.py` (Python 3.13, stdlib only) copies the finished 1024x1024
 poster `entry.png` to `/output/entry.png` — the poster shows the
-fallen moon half-submerged in the bay, the name MOONFALL arched
-huge across it, and the white cliff village climbing down to the
-harbour below, with one sailboat on the water, framed in cream like
-a vintage poster, with the tagline "WHERE THE MOON POURS INTO THE
-SEA" inside the moon's lower half. No generation, no network, no
+white cliff village reaching the middle of the image, the fallen
+moon behind its hills sinking into the sea, the name MOONFALL
+arched huge across the sky, and one sailboat on the water, framed
+in cream like a vintage poster, with the tagline "WHERE THE MOON
+POURS INTO THE SEA" beneath the name. No generation, no network, no
 randomness: two runs produce the same bytes.
 
 ---
