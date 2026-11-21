@@ -8,9 +8,9 @@ The travel poster of MOONFALL — a place that isn't there. A
 whitewashed cliff village climbs terraced hills from the left edge
 all the way to the middle of the image — lit windows, balconies,
 stairways, pine trees, people on the terraces, and a small harbour
-with boats below. Behind the village hills, as the background, a
-giant moon has fallen low, its lower half sinking into the turquoise
-sea on the right. The name MOONFALL arches huge across the sky in
+with boats below. In front of the bare empty hill on the right, a
+giant moon sits right below the name, its lower edge touching the
+turquoise sea. The name MOONFALL arches huge across the sky in
 cream serif, with the tagline curved beneath it. A single sailboat
 drifts on the calm water, and a path of golden light leads across
 the bay toward the moon and the horizon. Warm sunset gold, teal
@@ -25,12 +25,12 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 
 `main.py` (Python 3.13, stdlib only) copies the finished 1024x1024
 poster `entry.png` to `/output/entry.png` — the poster shows the
-white cliff village reaching the middle of the image, the fallen
-moon behind its hills sinking into the sea, the name MOONFALL
-arched huge across the sky, and one sailboat on the water, framed
-in cream like a vintage poster, with the tagline "WHERE THE MOON
-POURS INTO THE SEA" beneath the name. No generation, no network, no
-randomness: two runs produce the same bytes.
+white cliff village reaching the middle of the image, the giant
+moon right below the name in front of the empty hill, and one
+sailboat on the water, framed in cream like a vintage poster, with
+the tagline "WHERE THE MOON POURS INTO THE SEA" beneath the name.
+No generation, no network, no randomness: two runs produce the same
+bytes.
 
 ---
 
